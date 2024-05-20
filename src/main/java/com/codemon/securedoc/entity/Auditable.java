@@ -49,7 +49,6 @@ public abstract class Auditable {
        @PrePersist
        This will be called before saving anything in the database
      */
-
     @PrePersist
     public void beforePersist() {
         var userId = RequestContext.getUserId(); // Get the current user from the Request Context class
