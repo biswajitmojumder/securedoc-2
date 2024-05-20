@@ -1,5 +1,6 @@
 package com.codemon.securedoc.entity;
 
+import com.codemon.securedoc.domain.RequestContext;
 import com.codemon.securedoc.exception.ApiException;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -51,13 +52,12 @@ public abstract class Auditable {
 
     @PrePersist
     public void beforePersist() {
-        var userId = 1L; // Get the current user from the security context
+        var userId = RequestContext.getUserId(); // Get the current user from the Request Context class
 
         // If we don't know the user, we cannot save the entity throw an exception
         if(userId == null) {
            throw new ApiException("Cannot persist entity without a user ID in Request Context for this thread");
         }
-
         // Otherwise, set the createdBy and updatedBy fields to the current user
         setCreatedAt(now());
         setCreatedBy(userId);
@@ -73,13 +73,13 @@ public abstract class Auditable {
 
     @PreUpdate
     public void beforeUpdate() {
-        var userId = 1L; // Get the current user from the security context
+
+        var userId = RequestContext.getUserId(); // Get the current user from the Request Context class
 
         // If we don't know the user, we cannot save the entity throw an exception
         if(userId == null) {
             throw new ApiException("Cannot update entity without a user ID in Request Context for this thread");
         }
-
         // Otherwise, set the createdBy and updatedBy fields to the current user
         setUpdatedAt(now());
         setUpdatedBy(userId);
