@@ -1,10 +1,7 @@
 package com.codemon.securedoc.enumeration.converter;
-
-
 import com.codemon.securedoc.enumeration.Authority;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-
 import java.util.stream.Stream;
 
 /*
