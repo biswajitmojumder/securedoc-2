@@ -1,4 +1,4 @@
-package com.codemon.securedoc.entity.exception;
+package com.codemon.securedoc.exception;
 
 public class ApiException extends RuntimeException {
 

@@ -1,6 +1,6 @@
 package com.codemon.securedoc.entity;
 
-import com.codemon.securedoc.entity.exception.ApiException;
+import com.codemon.securedoc.exception.ApiException;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
