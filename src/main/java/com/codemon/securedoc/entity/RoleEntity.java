@@ -1,4 +1,5 @@
 package com.codemon.securedoc.entity;
+import com.codemon.securedoc.enumeration.Authority;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -18,5 +19,5 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 public class RoleEntity extends Auditable{
 
     private String name;
-    private String authorities;
+    private Authority authorities;
 }
