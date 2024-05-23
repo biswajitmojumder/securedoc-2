@@ -69,9 +69,6 @@ The Secure Document Management System is a robust and user-friendly application 
   3. Log in with your credentials.
   4. Set up MFA if required.
   5. Upload, search, manage, and collaborate on documents securely.
-     
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the project's code style and include appropriate tests.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
